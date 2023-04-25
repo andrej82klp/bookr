@@ -7,3 +7,7 @@ def index(request):
     name = request.GET.get("name") or "unknown"
     # return HttpResponse("Hey there, {}!".format(name))
     return render(request, "base.html", { "name": name })
+
+def search(request):
+    query = request.GET.get("query")
+    return render(request, "search.html", { "query": query })
